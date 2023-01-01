@@ -11,3 +11,8 @@ docker rm -f \<container> | Delete running container
 docker rmi \<image> | Delete docker image
 docker stop \<container> | Stop a running container 
 docker exec \<container> \<command> | Execute a command in running container
+docker logs \<container> | Show logs of container
+docker stats \<container> | Show memory consumption and CPU of containers
+docker top \<container> | Show running processes in a container
+docker port \<container> | Show port mapping of container
+docker diff \<container> | Show modified files in a container
