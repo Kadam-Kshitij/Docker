@@ -20,3 +20,4 @@ docker save \<image> > \<tar_file> | Save image to a tar file
 docker load -i \<tar_file> | Load image from a tar file. Loaded images can be viewed using docker images cmd
 docker run -it --entrypoint \<executable> \<image> | Change the entry point
 docker run -p \<host_port>:\<docker_port> \<image> | Map host port with docker port
+docker run -v \<host_path>:\<docker_path> \<image> | Map host repository with docker repository 
