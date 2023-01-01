@@ -16,3 +16,5 @@ docker stats \<container> | Show memory consumption and CPU of containers
 docker top \<container> | Show running processes in a container
 docker port \<container> | Show port mapping of container
 docker diff \<container> | Show modified files in a container
+docker save \<image> > \<tar_file> | Save image to a tar file
+docker load -i \<tar_file> | Load image from a tar file
