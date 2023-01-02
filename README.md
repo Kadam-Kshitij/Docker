@@ -34,7 +34,7 @@ When  container is started/restarted the initial port mapping remains same.
 How to change port mapping of a running container
 1) Stop and delete the container. Start fresh using run command. However all local changes will be lost.
 2) Stop container. Save it as an image. Run the newly created image.
-3) Stop container. Stop docker using command -> systemctl stop docker.service
+3) Stop container. Stop docker using command -> systemctl stop docker.service \n
 Navigate to /var/lib/docker/containers/\<container_id>. This folder will contain all the containers config files.
 In file hostconfig.json, add appropriate port binding, "PortBindings":{"8080/tcp":[{"HostIp":"","HostPort":"8051"}]}
 In file config.v2.json, add exposed ports, "ExposedPorts":{"8080/tcp":{}}
