@@ -24,6 +24,7 @@ docker run -v \<host_path>:\<docker_path> \<image> | Map host repository with do
 
 
 # Docker port mapping
+Command | Description
 --- | ---
 docker run -p \<host_port>:\<docker_port> | Map host_port to docker_port
 docker port \<container> | Display port mapping for a running container
