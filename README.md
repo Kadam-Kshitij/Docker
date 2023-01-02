@@ -29,7 +29,7 @@ Command | Description
 docker run -p \<host_port>:\<docker_port> | Map host_port to docker_port
 docker port \<container> | Display port mapping for a running container
 
-When  container is started/restarted the initial port mapping remains same.
+When  container is started/restarted the initial port mapping remains same. <br />
 If a host port is already in use ( by host application or other container ), then the new container will not start and will display error saying port is already in use.
 
 How to change port mapping of a running container
