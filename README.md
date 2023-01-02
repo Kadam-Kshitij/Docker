@@ -46,3 +46,8 @@ Start container. Newly mapped ports will be now visible. <br />
 Command | Description
 --- | ---
 docker volume create \<volume_name> | Creates a volume at location /var/lib/docker/volumes/\<volume_name>/_data
+docker volume inspect \<volume_name> | Display information about the volume
+docker volume ls | Display list of volume
+docker volume rm \<volume_name> | Delete volume
+
+
