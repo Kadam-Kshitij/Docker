@@ -41,3 +41,8 @@ In file <span style="color: red">hostconfig.json</span>, add appropriate port bi
 In file <span style="color: red">config.v2.json</span>, add exposed ports, "ExposedPorts":{"8080/tcp":{}} <br />
 Start docker service using command --> systemctl start docker.service <br />
 Start container. Newly mapped ports will be now visible. <br />
+
+# Docker volume
+Command | Description
+--- | ---
+docker volume create \<volume_name> | Creates a volume at location /var/lib/docker/volumes/\<volume_name>/_data
