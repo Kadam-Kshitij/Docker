@@ -50,6 +50,6 @@ docker volume inspect \<volume_name> | Display information about the volume
 docker volume ls | Display list of volume
 docker volume rm \<volume_name> | Delete volume
 docker run -v \<path_or_volumename>:\<docker_path> | Map host folder to docker folder
-docker run -v \<path_or_volumename>:\<docker_path>:ro | Map host folder to docker folder in read-only mode
+docker run -v \<path_or_volumename>:\<docker_path>:ro | Map host folder to docker folder in read-only mode. File can be modified only from host, not from docker
   
 When docker containers are restarted/started, the volume mapping remains same.
