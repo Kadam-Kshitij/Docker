@@ -51,10 +51,11 @@ docker volume ls | Display list of volume
 docker volume rm \<volume_name> | Delete volume
 docker run -v \<path_or_volumename>:\<docker_path> | Map host folder to docker folder
 docker run -v \<path_or_volumename>:\<docker_path>:ro | Map host folder to docker folder in read-only mode. File can be modified only from host, not from docker
+docker run --volumes-from \<container> \<image> | Mount volumes as per given container.
   
-When docker containers are restarted/started, the volume mapping remains same.
-
-
+1) When docker containers are restarted/started, the volume mapping remains same.
+2) Multiple docker containers can be mapped to the same volume. In this case, changing file in one container will cause change in other as well.
+3) --volumes-from option can be used for above point.
 
 # Docker network
 Command | Description
