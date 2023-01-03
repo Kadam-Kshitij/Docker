@@ -59,6 +59,7 @@ When docker containers are restarted/started, the volume mapping remains same.
 # Docker network
 Command | Description
 --- | ---
+docker run --network \<network_name> \<image>:\<tag> | Start a container in a particular network
 docker network create \<network_name> | Create a new network
 docker network ls | List all networks
 docker network rm \<network_name> | Remove a network
@@ -67,4 +68,7 @@ docker network prune \<network_name> | Remove networks not in use
 docker network connect \<network> \<container> | Add a container to a network
 docker network disconnect \<network> \<container> | Remove a container to a network
 
-When we run a container, by default it gets added to the bridge network.
+When we run a container, by default it gets added to the bridge network if no network is specified.<br/>
+Only containers in a particular network can talk to each other.<br/>
+Networks can be connected/disconnected from a network while they are running.<br/>
+Network related information of a container can be obtained using inspect commend on a container.<br/>
