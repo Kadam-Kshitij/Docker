@@ -53,3 +53,18 @@ docker run -v \<path_or_volumename>:\<docker_path> | Map host folder to docker f
 docker run -v \<path_or_volumename>:\<docker_path>:ro | Map host folder to docker folder in read-only mode. File can be modified only from host, not from docker
   
 When docker containers are restarted/started, the volume mapping remains same.
+
+
+
+# Docker network
+Command | Description
+--- | ---
+docker network create \<network_name> | Create a new network
+docker network ls | List all networks
+docker network rm \<network_name> | Remove a network
+docker network inspect \<network_name> | Display network info
+docker network prune \<network_name> | Remove networks not in use
+docker network connect \<network> \<container> | Add a container to a network
+docker network disconnect \<network> \<container> | Remove a container to a network
+
+When we run a container, by default it gets added to the bridge network.
