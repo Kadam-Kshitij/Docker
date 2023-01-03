@@ -68,7 +68,7 @@ docker network prune \<network_name> | Remove networks not in use
 docker network connect \<network> \<container> | Add a container to a network
 docker network disconnect \<network> \<container> | Remove a container to a network
 
-When we run a container, by default it gets added to the bridge network if no network is specified.<br/>
-Only containers in a particular network can talk to each other.<br/>
-Networks can be connected/disconnected from a network while they are running.<br/>
-Network related information of a container can be obtained using inspect commend on a container.<br/>
+1) When we run a container, by default it gets added to the bridge (default network) network if no network is specified.<br/>
+2) Only containers in a particular network can talk to each other.<br/>
+3) Networks can be connected/disconnected from a network while they are running.<br/>
+4) Network related information of a container can be obtained using inspect commend on a container.<br/>
