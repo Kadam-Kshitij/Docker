@@ -88,4 +88,13 @@ Sets the current work directory.
 
 3) MAINTAINER \<name><br/>
 Set the author field.
+  
+4) RUN \<command><br/>
+Runs specified command in the docker image during build process.
+
+5) COPY \<src> \<dest>
+Copy files from host to docker filesystem during build process.
+
+6) ADD \<src> \<dest>
+Same as COPY, but allows URL and unzips tar files.
 
