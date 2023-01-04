@@ -20,7 +20,8 @@ docker save \<image> > \<tar_file> | Save image to a tar file
 docker load -i \<tar_file> | Load image from a tar file. Loaded images can be viewed using docker images cmd
 docker run -it --entrypoint \<executable> \<image> | Change the entry point
 docker run -p \<host_port>:\<docker_port> \<image> | Map host port with docker port
-docker run -v \<host_path>:\<docker_path> \<image> | Map host repository with docker repository 
+docker run -v \<host_path>:\<docker_path> \<image> | Map host repository with docker repository
+docker build -t \<name>:\<tag> \<path_to_dockerfile> | Build image using Dockerfile. On success, image can be seen via docker images cmd. 
 
 
 # Docker port mapping
@@ -73,3 +74,18 @@ docker network disconnect \<network> \<container> | Remove a container to a netw
 2) Only containers in a particular network can talk to each other.<br/>
 3) Networks can be connected/disconnected from a network while they are running.<br/>
 4) Network related information of a container can be obtained using inspect commend on a container.<br/>
+
+
+# Dockerfile
+Use to build Docker images from scratch or already existing image.<br/>
+Link --> https://kapeli.com/cheat_sheets/Dockerfile.docset/Contents/Resources/Documents/index
+
+1) FROM \<image_name>
+This is the first uncommented line of Dockerfile. The docker image will be created using the specified image as base.
+
+2) WORKDIR \<path>
+Sets the current work directory.
+
+3) MAINTAINER \<name>
+Set the author field.
+
