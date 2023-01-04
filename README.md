@@ -80,12 +80,12 @@ docker network disconnect \<network> \<container> | Remove a container to a netw
 Use to build Docker images from scratch or already existing image.<br/>
 Link --> https://kapeli.com/cheat_sheets/Dockerfile.docset/Contents/Resources/Documents/index
 
-1) FROM \<image_name>
+1) FROM \<image_name><br/>
 This is the first uncommented line of Dockerfile. The docker image will be created using the specified image as base.
 
-2) WORKDIR \<path>
+2) WORKDIR \<path><br/>
 Sets the current work directory.
 
-3) MAINTAINER \<name>
+3) MAINTAINER \<name><br/>
 Set the author field.
 
