@@ -93,8 +93,10 @@ Set the author field.
 Runs specified command in the docker image during build process.
 
 5) COPY \<src> \<dest>
-Copy files from host to docker filesystem during build process.
+Copy files from host to docker filesystem during build process. src Path should be within build context
 
 6) ADD \<src> \<dest>
 Same as COPY, but allows URL and unzips tar files.
 
+7) ENV \<key> \<value>
+Sets the env variable. The variable persists even after running the container.
