@@ -92,11 +92,23 @@ Set the author field.
 4) RUN \<command><br/>
 Runs specified command in the docker image during build process.
 
-5) COPY \<src> \<dest>
+5) COPY \<src> \<dest><br/>
 Copy files from host to docker filesystem during build process. src Path should be within build context
 
-6) ADD \<src> \<dest>
+6) ADD \<src> \<dest><br/>
 Same as COPY, but allows URL and unzips tar files.
 
-7) ENV \<key> \<value>
+7) ENV \<key> \<value><br/>
 Sets the env variable. The variable persists even after running the container.
+
+8) exec form vs shell form. RUN, ENTRYPOINT and CMD can be runned in the following two forms.<br/>
+In shell form shell processing does not take place.
+Shell form - RUN cmd arg1 arg2
+Exec form - EXEC ["cmd", "arg1", "arg2"]
+
+9) ENTRYPOINT ["cmd", "arg1", "arg2"]
+Multiple ENTRYPOINT can exist. Last one is considered.<br/>
+  
+10) CMD ["cmd", "arg1", "arg2"]
+Multiple CMD can exist. Last one is considered.<br/>
+Can be overridden in the docker run command. docker run -it \<image> \<cmd>
