@@ -84,7 +84,7 @@ Link --> https://kapeli.com/cheat_sheets/Dockerfile.docset/Contents/Resources/Do
 This is the first uncommented line of Dockerfile. The docker image will be created using the specified image as base.
 
 2) WORKDIR \<path><br/>
-Sets the current work directory.
+Sets the current work directory. Persists even after running the container.
 
 3) MAINTAINER \<name><br/>
 Set the author field.
