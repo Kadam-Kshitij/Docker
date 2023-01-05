@@ -102,13 +102,13 @@ Same as COPY, but allows URL and unzips tar files.
 Sets the env variable. The variable persists even after running the container.
 
 8) exec form vs shell form. RUN, ENTRYPOINT and CMD can be runned in the following two forms.<br/>
-In shell form shell processing does not take place.
-Shell form - RUN cmd arg1 arg2
+In shell form shell processing does not take place.<br/>
+Shell form - RUN cmd arg1 arg2<br/>
 Exec form - EXEC ["cmd", "arg1", "arg2"]
 
-9) ENTRYPOINT ["cmd", "arg1", "arg2"]
-Multiple ENTRYPOINT can exist. Last one is considered.<br/>
+9) ENTRYPOINT ["cmd", "arg1", "arg2"]<br/>
+Multiple ENTRYPOINT can exist. Last one is considered.
   
-10) CMD ["cmd", "arg1", "arg2"]
+10) CMD ["cmd", "arg1", "arg2"]<br/>
 Multiple CMD can exist. Last one is considered.<br/>
 Can be overridden in the docker run command. docker run -it \<image> \<cmd>
