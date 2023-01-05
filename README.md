@@ -112,3 +112,5 @@ Multiple ENTRYPOINT can exist. Last one is considered.
 10) CMD ["cmd", "arg1", "arg2"]<br/>
 Multiple CMD can exist. Last one is considered.<br/>
 Can be overridden in the docker run command. docker run -it \<image> \<cmd>
+
+Difference ENTRYPOINT vs CMD - https://i.stack.imgur.com/MJmi9.png
