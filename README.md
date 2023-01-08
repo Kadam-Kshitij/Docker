@@ -2,6 +2,7 @@
 
 Command | Description
 --- | ---
+docker login -u \<user_name> -p \<password> docker.io | Login to docker via cli. Needed for docker push
 docker images | List all images
 docker ps | List all running containers
 docker ps -a | List all containers
