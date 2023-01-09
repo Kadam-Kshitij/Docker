@@ -22,7 +22,8 @@ docker load -i \<tar_file> | Load image from a tar file. Loaded images can be vi
 docker run -it --entrypoint \<executable> \<image> | Change the entry point
 docker run -p \<host_port>:\<docker_port> \<image> | Map host port with docker port
 docker run -v \<host_path>:\<docker_path> \<image> | Map host repository with docker repository
-docker build -t \<name>:\<tag> \<path_to_dockerfile> | Build image using Dockerfile. On success, image can be seen via docker images cmd. 
+docker build -t \<name>:\<tag> \<path_to_dockerfile> | Build image using Dockerfile. On success, image can be seen via docker images cmd.
+docker tag \<image>:\<tag> \<new_image_name>:\<new_tag> | Create a tag for an image
 
 
 # Docker port mapping
