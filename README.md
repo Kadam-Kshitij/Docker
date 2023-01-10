@@ -9,7 +9,7 @@ docker pull \<image>:\<tag> | Pull an image or a repository from a registry
 docker pull \<image>@sha256:\<digest> | Pull image using digest
 docker push \<image>:\<tag> | Push an image to remote registrydocker tag \<src_image>:\<src_tag> \<new_image_name>:\<new_tag> | Create a tag TARGET_IMAGE that refers to SOURCE_IMAGE
 
-Docker Image cpmmands
+Docker Image commands
 ---
 Image commands | Description
 --- | ---
@@ -156,9 +156,9 @@ Can be overridden in the docker run command. docker run -it \<image> \<cmd>
 
 Difference ENTRYPOINT vs CMD - https://i.stack.imgur.com/MJmi9.png
 
-11) ARG \<arg_name><br/> ( ARG value provided to Dockerfile via docker build cmd )
-ARG \<arg_name>=\<value> ( Hardcoded )
-Usage - $ARG
+11) ARG \<arg_name> ( ARG value provided to Dockerfile via docker build cmd )<br/>
+ARG \<arg_name>=\<value> ( Hardcoded )<br/>
+Usage - $ARG<br/>
 Provide arg to Dockerfile or hardcode it
 
 # AWS docker elastic container registry
