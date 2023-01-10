@@ -6,8 +6,8 @@ Command | Description
 --- | ---
 docker login -u \<user_name> -p \<password> \<server> | Login to docker server. Needed for docker push. ( User server docker.io for docker hub )
 docker pull \<image>:\<tag> | Pull an image or a repository from a registry
-docker pull \<image>@sha256:\<digest> | Pull image using digest 
-docker push \<image>:\<tag> | Push an image to remote repository
+docker pull \<image>@sha256:\<digest> | Pull image using digest
+docker push \<image>:\<tag> | Push an image to remote registrydocker tag \<src_image>:\<src_tag> \<new_image_name>:\<new_tag> | Create a tag TARGET_IMAGE that refers to SOURCE_IMAGE
 
 Docker Image cpmmands
 ---
@@ -15,6 +15,7 @@ Image commands | Description
 --- | ---
 docker images | List all images
 docker rmi \<image> | Delete docker image. All containers started from this image first needs to be deleted.
+docker history \<image>:\<tag> | History of an image
 
 Docker container commands
 ---
@@ -24,18 +25,21 @@ docker ps | List all running containers
 docker ps -a | List all containers
 docker rm \<container> | Delete stopped container
 docker rm -f \<container> | Delete running container
+docker start \<container> | Start a stopped container
+docker start \<container> | Stops and Start a running/stopped container 
 docker stop \<container> | Stop a running container 
 docker exec \<container> \<command> | Execute a command in running container
-
-Docker common commands
----
-Common commands | Description
---- | ---
+docker top \<container> | Show running processes in a container
+docker commit \<container> \<image>:\<tag> | Create a new image from a container
+docker cp \<src> \<container>:\<path> | Copy files/folder from host to container
+docker cp \<container>:\<path> \<dest> | Copy files/folder to host from container
 docker logs \<container> | Show logs of container
 docker stats \<container> | Show memory consumption and CPU of containers
-docker top \<container> | Show running processes in a container
 docker port \<container> | Show port mapping of container
 docker diff \<container> | Show modified files in a container
+docker exec -it \<container> \<executable> \<space_seperated_args> | Run command in running container
+docker export \<container> | Export container file-system to a tar file
+
 
 Docker Image load/save commands
 ---
@@ -57,7 +61,8 @@ Docker build commands
 Run build commands | Description
 --- | ---
 docker build -t \<name>:\<tag> \<path_to_dockerfile> | Build image using Dockerfile. On success, image can be seen via docker images cmd.
-docker tag \<image>:\<tag> \<new_image_name>:\<new_tag> | Create a tag for an image
+docker tag \<src_image>:\<src_tag> \<new_image_name>:\<new_tag> | Create a tag TARGET_IMAGE that refers to SOURCE_IMAGE
+docker build --build-arg \<arg_name>=\<value> -t \<name>:\<tag> \<path_to_dockerfile> | Provide argument to Dockerfile  
 
 
 # Docker port mapping
@@ -150,6 +155,11 @@ Multiple CMD can exist. Last one is considered.<br/>
 Can be overridden in the docker run command. docker run -it \<image> \<cmd>
 
 Difference ENTRYPOINT vs CMD - https://i.stack.imgur.com/MJmi9.png
+
+11) ARG \<arg_name><br/> ( ARG value provided to Dockerfile via docker build cmd )
+ARG \<arg_name>=\<value> ( Hardcoded )
+Usage - $ARG
+Provide arg to Dockerfile or hardcode it
 
 # AWS docker elastic container registry
 ```
