@@ -1,14 +1,20 @@
 # Docker
 
+Docker Login
+---
 Command | Description
 --- | ---
 docker login -u \<user_name> -p \<password> docker.io | Login to docker via cli. Needed for docker push
 
+Docker Image cpmmands
+---
 Image commands | Description
 --- | ---
 docker images | List all images
 docker rmi \<image> | Delete docker image. All containers started from this image first needs to be deleted.
 
+Docker container commands
+---
 Container command | Description
 --- | ---
 docker ps | List all running containers
@@ -19,6 +25,8 @@ docker rm -f \<container> | Delete running container
 docker stop \<container> | Stop a running container 
 docker exec \<container> \<command> | Execute a command in running container
 
+Docker common commands
+---
 Common commands | Description
 --- | ---
 docker logs \<container> | Show logs of container
@@ -27,11 +35,15 @@ docker top \<container> | Show running processes in a container
 docker port \<container> | Show port mapping of container
 docker diff \<container> | Show modified files in a container
 
+Docker Image load/save commands
+---
 Image load/save commands | Description
 --- | ---
 docker save \<image> > \<tar_file> | Save image to a tar file
 docker load -i \<tar_file> | Load image from a tar file. Loaded images can be viewed using docker images cmd
 
+Docker run commands
+---
 Run container commands | Description
 --- | ---
 docker run -it --entrypoint \<executable> \<image> \<space_seperated_args> | Change the entry point
