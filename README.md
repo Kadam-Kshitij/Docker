@@ -4,7 +4,10 @@ Docker Login
 ---
 Command | Description
 --- | ---
-docker login -u \<user_name> -p \<password> docker.io | Login to docker via cli. Needed for docker push
+docker login -u \<user_name> -p \<password> \<server> | Login to docker server. Needed for docker push. ( User server docker.io for docker hub )
+docker pull \<image>:\<tag> | Pull an image or a repository from a registry
+docker pull \<image>@sha256:\<digest> | Pull image using digest 
+docker push \<image>:\<tag> | Push an image to remote repository
 
 Docker Image cpmmands
 ---
@@ -19,7 +22,6 @@ Container command | Description
 --- | ---
 docker ps | List all running containers
 docker ps -a | List all containers
-docker pull \<image>:\<tag> | Pull an image or a repository from a registry
 docker rm \<container> | Delete stopped container
 docker rm -f \<container> | Delete running container
 docker stop \<container> | Stop a running container 
@@ -50,6 +52,10 @@ docker run -it --entrypoint \<executable> \<image> \<space_seperated_args> | Cha
 docker run -p \<host_port>:\<docker_port> \<image> | Map host port with docker port
 docker run -v \<host_path>:\<docker_path> \<image> | Map host repository with docker repository
 
+Docker build commands
+---
+Run build commands | Description
+--- | ---
 docker build -t \<name>:\<tag> \<path_to_dockerfile> | Build image using Dockerfile. On success, image can be seen via docker images cmd.
 docker tag \<image>:\<tag> \<new_image_name>:\<new_tag> | Create a tag for an image
 
@@ -147,8 +153,8 @@ Difference ENTRYPOINT vs CMD - https://i.stack.imgur.com/MJmi9.png
 
 # AWS docker elastic container registry
 ```
-aws ecr get-login-password --region <region> | docker login --username <user_name> --password-stdin <aws_docker_repo>
+aws ecr get-login-password --region <region> | docker login --username <user_name> --password-stdin <aws_docker_server>
 docker build -t awscontainer .
-docker tag awscontainer:latest <aws_docker_repo>/<repo_name>:<tag>
-docker push <aws_docker_repo>/<repo_name>:<tag>
+docker tag awscontainer:latest <aws_docker_server>/<repo_name>:<tag>
+docker push <aws_docker_server>/<repo_name>:<tag>
 ```
