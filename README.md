@@ -3,26 +3,41 @@
 Command | Description
 --- | ---
 docker login -u \<user_name> -p \<password> docker.io | Login to docker via cli. Needed for docker push
-| Login to aws docker registry
+
+Image commands | Description
+--- | ---
 docker images | List all images
+docker rmi \<image> | Delete docker image. All containers started from this image first needs to be deleted.
+
+Container command | Description
+--- | ---
 docker ps | List all running containers
 docker ps -a | List all containers
 docker pull \<image>:\<tag> | Pull an image or a repository from a registry
 docker rm \<container> | Delete stopped container
 docker rm -f \<container> | Delete running container
-docker rmi \<image> | Delete docker image
 docker stop \<container> | Stop a running container 
 docker exec \<container> \<command> | Execute a command in running container
+
+Common commands | Description
+--- | ---
 docker logs \<container> | Show logs of container
 docker stats \<container> | Show memory consumption and CPU of containers
 docker top \<container> | Show running processes in a container
 docker port \<container> | Show port mapping of container
 docker diff \<container> | Show modified files in a container
+
+Image load/save commands | Description
+--- | ---
 docker save \<image> > \<tar_file> | Save image to a tar file
 docker load -i \<tar_file> | Load image from a tar file. Loaded images can be viewed using docker images cmd
-docker run -it --entrypoint \<executable> \<image> | Change the entry point
+
+Run container commands | Description
+--- | ---
+docker run -it --entrypoint \<executable> \<image> \<space_seperated_args> | Change the entry point
 docker run -p \<host_port>:\<docker_port> \<image> | Map host port with docker port
 docker run -v \<host_path>:\<docker_path> \<image> | Map host repository with docker repository
+
 docker build -t \<name>:\<tag> \<path_to_dockerfile> | Build image using Dockerfile. On success, image can be seen via docker images cmd.
 docker tag \<image>:\<tag> \<new_image_name>:\<new_tag> | Create a tag for an image
 
