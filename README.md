@@ -3,6 +3,7 @@
 Command | Description
 --- | ---
 docker login -u \<user_name> -p \<password> docker.io | Login to docker via cli. Needed for docker push
+| Login to aws docker registry
 docker images | List all images
 docker ps | List all running containers
 docker ps -a | List all containers
@@ -116,3 +117,11 @@ Multiple CMD can exist. Last one is considered.<br/>
 Can be overridden in the docker run command. docker run -it \<image> \<cmd>
 
 Difference ENTRYPOINT vs CMD - https://i.stack.imgur.com/MJmi9.png
+
+# AWS docker elastic container registry
+```
+aws ecr get-login-password --region <region> | docker login --username <user_name> --password-stdin <aws_docker_repo>
+docker build -t awscontainer .
+docker tag awscontainer:latest <aws_docker_repo>/<repo_name>:<tag>
+docker push <aws_docker_repo>/<repo_name>:<tag>
+```
