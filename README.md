@@ -26,7 +26,7 @@ docker ps -a | List all containers
 docker rm \<container> | Delete stopped container
 docker rm -f \<container> | Delete running container
 docker start \<container> | Start a stopped container
-docker start \<container> | Stops and Start a running/stopped container 
+docker restart \<container> | Stops and Start a running/stopped container 
 docker stop \<container> | Stop a running container 
 docker exec \<container> \<command> | Execute a command in running container
 docker top \<container> | Show running processes in a container
@@ -157,6 +157,9 @@ Multiple CMD can exist. Last one is considered.<br/>
 Can be overridden in the docker run command. docker run -it \<image> \<cmd>
 
 Difference ENTRYPOINT vs CMD - https://i.stack.imgur.com/MJmi9.png
+Entry point provides the main command to execute. Args in CMD gets appended to ENTRYPOINT.
+If ENTRYPOINT is not specified, the CMD will provide the main command.
+CMD can be overriddedn in the run command.
 
 11) ARG \<arg_name> ( ARG value provided to Dockerfile via docker build cmd )<br/>
 ARG \<arg_name>=\<value> ( Hardcoded )<br/>
