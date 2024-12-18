@@ -166,6 +166,9 @@ ARG \<arg_name>=\<value> ( Hardcoded )<br/>
 Usage - $ARG<br/>
 Provide arg to Dockerfile or hardcode it
 
+Docker Compose is used to start multiple docker images at a time.
+Network, volumes are mentioned in the file
+
 # AWS docker elastic container registry
 ```
 aws ecr get-login-password --region <region> | docker login --username <user_name> --password-stdin <aws_docker_server>
